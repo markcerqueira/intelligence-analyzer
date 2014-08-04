@@ -1,0 +1,3 @@
+[submodule "resources/intelligence-json"]
+	path = resources/intelligence-json
+	url = git@github.com:markcerqueira/intelligence-json.git
