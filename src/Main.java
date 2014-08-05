@@ -11,7 +11,10 @@ public class Main {
     public static void main(String[] args) {
         loadResultsFromDisk(false /* load all results, even those without breakdowns */);
 
-        System.out.println("main - sResultsArrayList contains " + sResultsArrayList.size() + " results");
+        System.out.println("main - sResultsArrayList contains " + sResultsArrayList.size() + " results\n");
+
+        // some basic validation of results to ensure there is no super wrong data
+        new ResultsValidator(sResultsArrayList).run();
     }
 
     public static void loadResultsFromDisk(boolean loadOnlyCompleteResults) {

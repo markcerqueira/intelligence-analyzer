@@ -20,6 +20,8 @@ public class Result {
     @JsonProperty("unchanged") public VotingResult unchangedVoteBreakdown;
     @JsonProperty("changed") public VotingChange changedVoteBreakdown;
 
+    @JsonProperty("note") public String note; // miscellaneous information
+
     @SuppressWarnings("Jackson JSON parser requires a default constructor")
     public Result() {
 
