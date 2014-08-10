@@ -16,6 +16,8 @@ public class ResultsValidator {
         HashSet<String> datesSet = new HashSet<String>();
 
         for(Result result : mResultsList) {
+            System.out.println(result.topic + "; " + result.winner);
+
             if(urlSet.contains(result.url)) {
                 System.out.println("ResultsValidator - run - url: " + result.url + " already seen.");
             }
@@ -32,8 +34,8 @@ public class ResultsValidator {
             imageUrlSet.add(result.imageUrl);
             datesSet.add(result.date);
 
-            int forDelta = result.postDebateResults.forPercentage - result.preDebateResults.forPercentage;
-            int againstDelta = result.postDebateResults.againstPercentage - result.preDebateResults.againstPercentage;
+            int forDelta = result.changeInForVotes();
+            int againstDelta = result.changeInAgainstVotes();
 
             if (forDelta != againstDelta) {
                 if (forDelta > againstDelta) {
@@ -45,6 +47,8 @@ public class ResultsValidator {
                         System.out.println("ResultsValidator - run - winner for " + result.date + " may be incorrect");
                     }
                 }
+            } else {
+                System.out.println("ResultsValidator - " + result.date + " - tie found on topic " + result.topic);
             }
         }
     }

@@ -15,6 +15,9 @@ public class Main {
 
         // some basic validation of results to ensure there is no super wrong data
         new ResultsValidator(sResultsArrayList).run();
+
+        // sort data a bunch of ways and print the first element
+        new ResultSorter(sResultsArrayList).run();
     }
 
     public static void loadResultsFromDisk(boolean loadOnlyCompleteResults) {

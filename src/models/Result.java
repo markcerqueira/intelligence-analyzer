@@ -26,5 +26,22 @@ public class Result {
     public Result() {
 
     }
+
+    public int changeInForVotes() {
+        return postDebateResults.forPercentage - preDebateResults.forPercentage;
+    }
+
+    public int changeInAgainstVotes() {
+        return postDebateResults.againstPercentage - preDebateResults.againstPercentage;
+    }
+
+    public int changeInUndecidedVotes() {
+        return postDebateResults.undecidedPercentage - preDebateResults.undecidedPercentage;
+    }
+
+    @Override
+    public String toString() {
+        return date + "; " + topic;
+    }
 }
 
